@@ -10,10 +10,15 @@
     <meta name="apple-mobile-web-app-title" content="La Tvorza" />
     <link rel="icon" href="/pizza-latvorza/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/pizza-latvorza/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
     <title>La Tvorza · Your local pizza dealer</title>
+    <style>
+      /* Splash painted before the JS bundle arrives (slow networks): brand colour + name, replaced by React. */
+      html, body, #root { height: 100%; margin: 0; }
+      body { background: var(--color-cream-100, #fff); }
+      .splash { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--color-forest-800, #222); }
+      .splash-name { font-family: var(--font-display, sans-serif); font-weight: var(--display-weight, 400); font-size: calc(40px * var(--display-scale, 1)); letter-spacing: var(--display-tracking, 0.02em); text-transform: var(--display-case, none); }
+      .splash-sub { font: 600 12px -apple-system, BlinkMacSystemFont, system-ui, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+    </style>
   <style id="tenant-theme">
  html[data-tenant="latvorza"] {
   --color-cream-50: #262626;
@@ -53,11 +58,29 @@
   --motif: repeating-linear-gradient(90deg, #2E2E2E 0 14px, #121212 14px 30px);
   --glass-bg: rgba(18, 18, 18, 0.82);
  }
+/* self-hosted display font (latin + latin-ext for Serbian diacritics); /pizza-latvorza/ is filled in by vite.config.ts */
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/pizza-latvorza/fonts/archivo-black-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/pizza-latvorza/fonts/archivo-black-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 </style>
-    <script type="module" crossorigin src="/pizza-latvorza/assets/index-Bxpdak3G.js"></script>
+    <link rel="preload" as="image" href="/pizza-latvorza/pizzas/uslovna.webp" />
+    <script type="module" crossorigin src="/pizza-latvorza/assets/index-Bwdfa0nR.js"></script>
     <link rel="stylesheet" crossorigin href="/pizza-latvorza/assets/index-Bj3AoXIi.css">
-  </head>
+  <link rel="manifest" href="/pizza-latvorza/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/pizza-latvorza/registerSW.js"></script></head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div class="splash"><span class="splash-name">La Tvorza</span><span class="splash-sub">Učitavanje</span></div></div>
   </body>
 </html>
