@@ -1,0 +1,26 @@
+{
+  "id": "/pizza-latvorza/kuhinja",
+  "name": "La Tvorza · Kuhinja",
+  "short_name": "Kuhinja",
+  "description": "Portal za kuhinju — La Tvorza",
+  "lang": "sr",
+  "start_url": "/pizza-latvorza/kuhinja",
+  "scope": "/pizza-latvorza/kuhinja",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#F4F4F4",
+  "background_color": "#F4F4F4",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
